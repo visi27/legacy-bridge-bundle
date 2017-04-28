@@ -22,15 +22,21 @@ Installation
 
 Configuration
 -------------
-In your config.yml place:
+In your config.yml place and make sure the paths are correct:
 
-    basster_legacy_bridge:
+    basster_legacy_bridge:  
         legacy_path:    '/full/path/to/my/legacy/project/files'
         # optional prepend script (see http://php.net/manual/en/ini.core.php#ini.auto-prepend-file)
         prepend_script: '/full/path/to/my/legacy/autoPrependFile.php' # can be ommited
         # optional append script (see http://php.net/manual/en/ini.core.php#ini.auto-append-file)
         append_script:  '/full/path/to/my/legacy/autoAppendFile.php' # can be ommited
 
+Be sure to activate the legacy routing loader in routing.yml:
+
+    app_legacy:
+        resource: .
+        type: legacy
+        
 On the legacy app
 -----------------
 
